@@ -157,3 +157,7 @@ unattended.
 - Bluetooth status reports to a phone.
 
 See the full write-up in [docs/REPORT.md](docs/REPORT.md).
+
+## License
+
+[MIT](LICENSE): you are free to use, change and share this project, as long as you keep the license notice.
