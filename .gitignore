@@ -1,0 +1,8 @@
+# Personal notes (not published)
+PLAN-ar.md
+GUIDE-ar.md
+
+# Arduino build output
+build/
+*.hex
+*.elf

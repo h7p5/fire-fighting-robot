@@ -1,0 +1,445 @@
+{
+  "version": 1,
+  "author": "fire-fighting-robot",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 230,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_title",
+      "top": 0,
+      "left": 20,
+      "attrs": {
+        "text": "FLAME SENSOR = 5 sliders (you are the fire)\nslide an eye to the LEFT = it sees a flame"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "eye0",
+      "top": 60,
+      "left": 130,
+      "attrs": {
+        "travelLength": "30",
+        "value": "1023"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "eye1",
+      "top": 180,
+      "left": 130,
+      "attrs": {
+        "travelLength": "30",
+        "value": "1023"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "eye2",
+      "top": 300,
+      "left": 130,
+      "attrs": {
+        "travelLength": "30",
+        "value": "1023"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "eye3",
+      "top": 420,
+      "left": 130,
+      "attrs": {
+        "travelLength": "30",
+        "value": "1023"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "eye4",
+      "top": 540,
+      "left": 130,
+      "attrs": {
+        "travelLength": "30",
+        "value": "1023"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_eye0",
+      "top": 100,
+      "left": 10,
+      "attrs": {
+        "text": "eye 0 (LEFT)"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_eye1",
+      "top": 220,
+      "left": 10,
+      "attrs": {
+        "text": "eye 1"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_eye2",
+      "top": 340,
+      "left": 10,
+      "attrs": {
+        "text": "eye 2 (AHEAD)"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_eye3",
+      "top": 460,
+      "left": 10,
+      "attrs": {
+        "text": "eye 3"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_eye4",
+      "top": 580,
+      "left": 10,
+      "attrs": {
+        "text": "eye 4 (RIGHT)"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_left",
+      "top": 40,
+      "left": 760,
+      "attrs": {
+        "text": "LEFT WHEEL"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "l_fwd",
+      "top": 65,
+      "left": 770,
+      "attrs": {
+        "color": "green",
+        "label": "forward"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "l_back",
+      "top": 65,
+      "left": 830,
+      "attrs": {
+        "color": "red",
+        "label": "back"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_right",
+      "top": 150,
+      "left": 760,
+      "attrs": {
+        "text": "RIGHT WHEEL"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "r_fwd",
+      "top": 175,
+      "left": 770,
+      "attrs": {
+        "color": "green",
+        "label": "forward"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "r_back",
+      "top": 175,
+      "left": 830,
+      "attrs": {
+        "color": "red",
+        "label": "back"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_noz",
+      "top": 260,
+      "left": 760,
+      "attrs": {
+        "text": "NOZZLE (servo)"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "nozzle",
+      "top": 285,
+      "left": 760,
+      "attrs": {
+        "hornColor": "#1565C0"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_pump",
+      "top": 430,
+      "left": 760,
+      "attrs": {
+        "text": "PUMP (relay + blue LED = water)"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 455,
+      "left": 760,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "pump",
+      "top": 445,
+      "left": 910,
+      "attrs": {
+        "color": "blue",
+        "label": "WATER"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "t_buz",
+      "top": 545,
+      "left": 760,
+      "attrs": {
+        "text": "BUZZER"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 570,
+      "left": 770,
+      "attrs": {
+        "volume": "0.3"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "eye0:SIG",
+      "uno:A0",
+      "green",
+      []
+    ],
+    [
+      "eye1:SIG",
+      "uno:A1",
+      "green",
+      []
+    ],
+    [
+      "eye2:SIG",
+      "uno:A2",
+      "green",
+      []
+    ],
+    [
+      "eye3:SIG",
+      "uno:A3",
+      "green",
+      []
+    ],
+    [
+      "eye4:SIG",
+      "uno:A4",
+      "green",
+      []
+    ],
+    [
+      "eye0:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "eye1:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "eye2:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "eye3:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "eye4:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "eye0:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "eye1:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "eye2:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "eye3:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "eye4:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "l_fwd:A",
+      "uno:7",
+      "blue",
+      []
+    ],
+    [
+      "l_back:A",
+      "uno:8",
+      "blue",
+      []
+    ],
+    [
+      "r_fwd:A",
+      "uno:11",
+      "blue",
+      []
+    ],
+    [
+      "r_back:A",
+      "uno:12",
+      "blue",
+      []
+    ],
+    [
+      "l_fwd:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "l_back:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "r_fwd:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "r_back:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "nozzle:PWM",
+      "uno:9",
+      "orange",
+      []
+    ],
+    [
+      "nozzle:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "nozzle:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "relay:IN",
+      "uno:10",
+      "orange",
+      []
+    ],
+    [
+      "relay:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "relay:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "relay:COM",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "relay:NC",
+      "pump:A",
+      "blue",
+      []
+    ],
+    [
+      "pump:C",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "buzzer:2",
+      "uno:4",
+      "orange",
+      []
+    ],
+    [
+      "buzzer:1",
+      "uno:GND.3",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

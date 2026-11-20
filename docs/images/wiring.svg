@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="sans-serif" font-size="13">
+  <rect width="1000" height="640" fill="#ffffff"/>
+
+  <!-- ===== Power ===== -->
+  <rect x="40" y="40" width="170" height="60" rx="6" fill="#FCEBEB" stroke="#A32D2D"/>
+  <text x="125" y="66" text-anchor="middle" font-weight="bold" fill="#791F1F">2x 18650 battery</text>
+  <text x="125" y="86" text-anchor="middle" fill="#791F1F">7.4 V</text>
+  <rect x="240" y="50" width="80" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A"/>
+  <text x="280" y="75" text-anchor="middle" fill="#2C2C2A">switch</text>
+  <line x1="210" y1="70" x2="240" y2="70" stroke="#E24B4A" stroke-width="2.5"/>
+  <text x="225" y="62" text-anchor="middle" font-size="11" fill="#A32D2D">+</text>
+  <polyline points="320,70 350,70 350,190 400,190" fill="none" stroke="#E24B4A" stroke-width="2.5"/>
+  <polyline points="350,160 200,160 200,240" fill="none" stroke="#E24B4A" stroke-width="2.5"/>
+  <circle cx="350" cy="160" r="4" fill="#E24B4A"/>
+  <line x1="150" y1="100" x2="150" y2="240" stroke="#2C2C2A" stroke-width="2.5"/>
+  <text x="140" y="125" text-anchor="end" font-size="11" fill="#2C2C2A">-</text>
+
+  <!-- ===== L298N ===== -->
+  <rect x="130" y="240" width="160" height="230" rx="6" fill="#E6F1FB" stroke="#185FA5"/>
+  <text x="210" y="460" text-anchor="middle" font-weight="bold" fill="#0C447C">L298N</text>
+  <text x="150" y="256" text-anchor="middle" font-size="11" fill="#0C447C">GND</text>
+  <text x="200" y="256" text-anchor="middle" font-size="11" fill="#0C447C">12V</text>
+  <text x="265" y="256" text-anchor="middle" font-size="11" fill="#0C447C">5V out</text>
+  <g font-size="11" fill="#0C447C" text-anchor="end">
+    <text x="284" y="284">ENA</text><text x="284" y="309">ENB</text>
+    <text x="284" y="334">IN1</text><text x="284" y="359">IN2</text>
+    <text x="284" y="384">IN3</text><text x="284" y="409">IN4</text>
+  </g>
+  <g font-size="11" fill="#0C447C">
+    <text x="136" y="304">OUT1/2</text><text x="136" y="404">OUT3/4</text>
+  </g>
+  <line x1="265" y1="240" x2="265" y2="214" stroke="#E24B4A" stroke-width="2"/>
+  <text x="270" y="210" font-size="11" fill="#A32D2D">→ servo + and relay COM</text>
+
+  <!-- Motors -->
+  <rect x="14" y="280" width="92" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A"/>
+  <text x="60" y="305" text-anchor="middle" fill="#2C2C2A">left motor</text>
+  <rect x="14" y="380" width="92" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A"/>
+  <text x="60" y="405" text-anchor="middle" fill="#2C2C2A">right motor</text>
+  <line x1="106" y1="300" x2="130" y2="300" stroke="#5F5E5A" stroke-width="2.5"/>
+  <line x1="106" y1="400" x2="130" y2="400" stroke="#5F5E5A" stroke-width="2.5"/>
+
+  <!-- L298N <-> Arduino -->
+  <g stroke="#378ADD" stroke-width="2">
+    <line x1="290" y1="280" x2="400" y2="280"/><line x1="290" y1="305" x2="400" y2="305"/>
+    <line x1="290" y1="330" x2="400" y2="330"/><line x1="290" y1="355" x2="400" y2="355"/>
+    <line x1="290" y1="380" x2="400" y2="380"/><line x1="290" y1="405" x2="400" y2="405"/>
+  </g>
+
+  <!-- ===== Arduino ===== -->
+  <rect x="400" y="150" width="200" height="370" rx="8" fill="#185FA5"/>
+  <text x="500" y="176" text-anchor="middle" font-weight="bold" fill="#ffffff">Arduino UNO</text>
+  <g fill="#ffffff" font-size="12">
+    <text x="408" y="194">VIN</text><text x="408" y="224">GND</text>
+    <text x="408" y="284">D5</text><text x="408" y="309">D6</text>
+    <text x="408" y="334">D7</text><text x="408" y="359">D8</text>
+    <text x="408" y="384">D11</text><text x="408" y="409">D12</text>
+  </g>
+  <g fill="#ffffff" font-size="12" text-anchor="end">
+    <text x="592" y="194">5V</text><text x="592" y="224">GND</text>
+    <text x="592" y="264">A0</text><text x="592" y="284">A1</text><text x="592" y="304">A2</text>
+    <text x="592" y="324">A3</text><text x="592" y="344">A4</text>
+    <text x="592" y="384">D9</text><text x="592" y="424">D10</text><text x="592" y="502">D4</text>
+  </g>
+  <line x1="400" y1="220" x2="376" y2="220" stroke="#2C2C2A" stroke-width="2"/>
+  <text x="372" y="224" text-anchor="end" font-size="11" fill="#2C2C2A">GND</text>
+  <line x1="600" y1="220" x2="624" y2="220" stroke="#2C2C2A" stroke-width="2"/>
+  <text x="628" y="224" font-size="11" fill="#2C2C2A">GND</text>
+  <polyline points="600,190 760,190 760,240" fill="none" stroke="#E24B4A" stroke-width="2"/>
+  <text x="640" y="182" font-size="11" fill="#A32D2D">5V → sensor VCC, relay VCC</text>
+
+  <!-- ===== Flame sensor ===== -->
+  <rect x="720" y="240" width="230" height="115" rx="6" fill="#E1F5EE" stroke="#0F6E56"/>
+  <text x="840" y="290" text-anchor="middle" font-weight="bold" fill="#085041">5-channel</text>
+  <text x="840" y="308" text-anchor="middle" font-weight="bold" fill="#085041">flame sensor</text>
+  <text x="840" y="330" text-anchor="middle" font-size="11" fill="#0F6E56">left A1 ... A5 right</text>
+  <g stroke="#1D9E75" stroke-width="2">
+    <line x1="600" y1="260" x2="720" y2="260"/><line x1="600" y1="280" x2="720" y2="280"/>
+    <line x1="600" y1="300" x2="720" y2="300"/><line x1="600" y1="320" x2="720" y2="320"/>
+    <line x1="600" y1="340" x2="720" y2="340"/>
+  </g>
+
+  <!-- ===== Servo ===== -->
+  <rect x="720" y="364" width="230" height="34" rx="6" fill="#FAEEDA" stroke="#854F0B"/>
+  <text x="835" y="386" text-anchor="middle" fill="#633806">SG90 nozzle servo (signal)</text>
+  <line x1="600" y1="380" x2="720" y2="380" stroke="#EF9F27" stroke-width="2"/>
+
+  <!-- ===== Relay + pump ===== -->
+  <rect x="720" y="408" width="110" height="56" rx="6" fill="#FAEEDA" stroke="#854F0B"/>
+  <text x="775" y="432" text-anchor="middle" fill="#633806">relay</text>
+  <text x="775" y="450" text-anchor="middle" font-size="11" fill="#633806">IN · COM · NO</text>
+  <line x1="600" y1="420" x2="720" y2="420" stroke="#EF9F27" stroke-width="2"/>
+  <rect x="860" y="408" width="90" height="56" rx="6" fill="#E6F1FB" stroke="#185FA5"/>
+  <text x="905" y="432" text-anchor="middle" fill="#0C447C">water</text>
+  <text x="905" y="450" text-anchor="middle" fill="#0C447C">pump</text>
+  <line x1="830" y1="436" x2="860" y2="436" stroke="#E24B4A" stroke-width="2"/>
+
+  <!-- ===== Buzzer ===== -->
+  <rect x="720" y="482" width="110" height="34" rx="6" fill="#FAEEDA" stroke="#854F0B"/>
+  <text x="775" y="504" text-anchor="middle" fill="#633806">buzzer</text>
+  <line x1="600" y1="498" x2="720" y2="498" stroke="#EF9F27" stroke-width="2"/>
+
+  <!-- ===== Legend ===== -->
+  <g font-size="12" fill="#2C2C2A">
+    <line x1="40" y1="566" x2="70" y2="566" stroke="#E24B4A" stroke-width="2.5"/><text x="78" y="570">power (+)</text>
+    <line x1="170" y1="566" x2="200" y2="566" stroke="#2C2C2A" stroke-width="2.5"/><text x="208" y="570">GND: ALL grounds are connected together</text>
+    <line x1="500" y1="566" x2="530" y2="566" stroke="#378ADD" stroke-width="2"/><text x="538" y="570">motor control</text>
+    <line x1="650" y1="566" x2="680" y2="566" stroke="#1D9E75" stroke-width="2"/><text x="688" y="570">flame sensor</text>
+    <line x1="800" y1="566" x2="830" y2="566" stroke="#EF9F27" stroke-width="2"/><text x="838" y="570">outputs</text>
+    <text x="40" y="604">Remove the ENA and ENB jumper caps on the L298N (PWM speed control). Keep its 5V jumper ON (battery is under 12 V).</text>
+    <text x="40" y="624">Pump: L298N 5V out → relay COM, relay NO → pump +, pump - → GND. Servo: red → L298N 5V out, brown → GND.</text>
+  </g>
+</svg>
